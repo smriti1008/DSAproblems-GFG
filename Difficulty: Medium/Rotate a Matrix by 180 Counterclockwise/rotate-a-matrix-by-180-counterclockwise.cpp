@@ -1,0 +1,26 @@
+class Solution {
+  public:
+    void rotateMatrix(vector<vector<int>>& mat) {
+        // Code here
+        int n=mat.size();
+        for(int j=0;j<n;j++)
+        {
+            int top=0,bottom=n-1;
+            while(top<bottom)
+            {
+                swap(mat[top][j],mat[bottom][j]);
+                top++,bottom--;
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            int start=0,end=n-1;
+            while(start<end)
+            {
+                swap(mat[i][start],mat[i][end]);
+                start++,end--;
+            }
+        }
+    }
+};
+
